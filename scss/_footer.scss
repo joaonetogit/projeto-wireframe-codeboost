@@ -1,0 +1,159 @@
+footer {
+  background-color: $gray-colors-100;
+  padding-top: 8.8rem;
+  padding-bottom: 3.9rem;
+
+  main {
+    @include flex(row, flex-start, space-between);
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 7.2rem;
+
+    .area-left {
+      max-width: 28.1rem;
+      p {
+        font-size: 1.4rem;
+        line-height: 150%;
+        color: $white-colors-text;
+        margin-top: 3.5rem;
+      }
+    }
+
+    nav {
+      width: 100%;
+      max-width: 77.7rem;
+      @include flex(row, flex-start, space-between);
+
+      .item {
+        h6 {
+          font-family: "Sora" sans-serif;
+          font-weight: 600;
+          line-height: 125%;
+          letter-spacing: -0.1rem;
+          color: $white;
+          margin-bottom: 2.4rem;
+        }
+
+        ul {
+          li {
+            &:last-child {
+              margin-bottom: 0;
+            }
+
+            margin-bottom: 3.2rem;
+
+            a {
+              font-family: "Sora", sans-serif;
+              font-weight: 500;
+              font-size: 1.4rem;
+              line-height: 105%;
+              color: $white-colors-text;
+              transition: all 0.3s;
+
+              &:hover {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+
+      &:last-child {
+        ul {
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              span {
+                color: $white-colors-text;
+                margin-left: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .copy {
+    @include flex(row, center, space-between);
+    padding-top: 3.1rem;
+    p,
+    span {
+      color: $white-colors-text;
+    }
+    .group {
+      display: flex;
+      align-items: center;
+      span {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+
+  @include responsive(1200px) {
+    main {
+      nav {
+        max-width: 63rem;
+      }
+    }
+  }
+
+  @include responsive(991px) {
+    main {
+      nav {
+        max-width: 45rem;
+      }
+    }
+  }
+
+  @include responsive(768px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+
+      .area-left {
+        @include flex(column, center, center);
+        margin-bottom: 4rem;
+        p {
+          text-align: center;
+        }
+      }
+
+      nav {
+        max-width: 100%;
+      }
+    }
+  }
+
+  @include responsive(480px) {
+    padding: 4rem 0;
+
+    main {
+      padding-bottom: 4rem;
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+
+        .item {
+          margin-bottom: 4rem;
+          ul {
+            @include flex(column, center, center);
+          }
+
+          &:last-child {
+            margin-bottom: 0rem;
+          }
+        }
+      }
+    }
+
+    .copy {
+      flex-direction: column;
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
